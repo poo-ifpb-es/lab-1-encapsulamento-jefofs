@@ -24,6 +24,9 @@ public class CarroAluguel {
     }
 
     public void alugar(){
+        if(disponivel == false){
+            throw new CarroIndisponivelException();
+        }
         this.disponivel = false;
     }
 

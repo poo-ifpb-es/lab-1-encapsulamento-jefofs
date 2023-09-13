@@ -1,6 +1,7 @@
-import
+import java.time.LocalDateTime;
 public class ContaBancaria{
     double saldo;
+    LocalDateTime horario = LocalDateTime.now();
 
     public ContaBancaria(double saldo){
         this.saldo = saldo;
@@ -11,7 +12,9 @@ public class ContaBancaria{
     }
 
     public void setSacar(double sacar) {
-        saldo -= sacar;
+        if(horario.getHour < 20 || horario.getHour){
+            saldo -= sacar;
+        }
     }
 
     public double getSaldo(){
